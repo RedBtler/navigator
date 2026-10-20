@@ -313,9 +313,15 @@ const PropertyPublicDetails = () => {
                     <TabsTrigger value="details">Характеристики</TabsTrigger>
                   </TabsList>
                   <TabsContent value="description" className="space-y-4">
-                    <p className="text-muted-foreground whitespace-pre-wrap">
-                      {property.description || "Описание отсутствует"}
-                    </p>
+                    <div className="space-y-4 text-muted-foreground leading-relaxed break-words">
+                      {(property.description?.trim() || "Описание отсутствует")
+                        .split(/\r?\n\s*\r?\n/)
+                        .map((paragraph, index) => (
+                          <p key={index} className="whitespace-pre-line">
+                            {paragraph}
+                          </p>
+                        ))}
+                    </div>
                   </TabsContent>
                   <TabsContent value="details" className="space-y-4">
                     <div className="grid grid-cols-2 gap-4">

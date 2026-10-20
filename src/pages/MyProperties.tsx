@@ -323,7 +323,7 @@ export default function MyProperties() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProperties.map((property) => (
-            <Card key={property.id} className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate(`/properties/${property.id}`)}>
+            <Card key={property.id} className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer" onClick={() => window.open(`/properties/${property.id}`, '_blank', 'noopener,noreferrer')}>
               {property.property_photos && property.property_photos.length > 0 && (
                 <div className="aspect-video bg-muted overflow-hidden">
                   <img
@@ -416,7 +416,7 @@ export default function MyProperties() {
                     className="flex-1"
                     onClick={(e) => {
                       e.stopPropagation();
-                      navigate(`/properties/${property.id}`);
+                      window.open(`/properties/${property.id}`, '_blank', 'noopener,noreferrer');
                     }}
                   >
                     <Eye className="h-4 w-4 mr-2" />

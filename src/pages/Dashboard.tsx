@@ -771,6 +771,8 @@ export default function Dashboard() {
           >
             <Link
               to={`/properties/${property.id}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="block no-underline"
               onClick={(e) => {
                 if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) {
