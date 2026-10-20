@@ -863,7 +863,7 @@ export default function Dashboard() {
                 </div>
               </div>
               <CardTitle className="text-xl line-clamp-1">{property.address}</CardTitle>
-              <CardDescription className="line-clamp-2">
+              <CardDescription className="line-clamp-2 whitespace-pre-line break-words">
                 {property.description || 'Описание отсутствует'}
               </CardDescription>
             </CardHeader>

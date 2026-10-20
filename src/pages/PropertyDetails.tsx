@@ -633,9 +633,15 @@ export default function PropertyDetails() {
                   <CardTitle>Описание</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {property.description || 'Описание отсутствует'}
-                  </p>
+                  <div className="space-y-4 text-muted-foreground leading-relaxed break-words">
+                    {(property.description?.trim() || 'Описание отсутствует')
+                      .split(/\r?\n\s*\r?\n/)
+                      .map((paragraph, index) => (
+                        <p key={index} className="whitespace-pre-line">
+                          {paragraph}
+                        </p>
+                      ))}
+                  </div>
                 </CardContent>
               </Card>
             </TabsContent>
